@@ -41,4 +41,6 @@ class Queue:
 
 
     def len(self):
-        return self.size
+        dll = self.size
+        return dll
+
