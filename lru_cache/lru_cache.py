@@ -67,4 +67,4 @@ class LRUCache:
            self.dll.remove_from_tail()
            
            
-       
+       # add to both dictionary and to linked list
