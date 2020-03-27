@@ -97,13 +97,10 @@ class BinarySearchTree:
         while queue.len() > 0:
             delete_queue = queue.dequeue()
             print(delete_queue.value)
-
             if delete_queue.left:
                 queue.enqueue(delete_queue.left)
-
             if delete_queue.right:
                 queue.enqueue(delete_queue.right)
-
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
@@ -117,7 +114,6 @@ class BinarySearchTree:
                 stack.push(delete_stack.left)
             if delete_stack.right:
                 stack.push(delete_stack.right)
-
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
