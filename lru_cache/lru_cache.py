@@ -1,7 +1,3 @@
-import sys
-sys.path.append('../doubly_linked_list')
-from doubly_linked_list import (DoublyLinkedList, ListNode)
-
 class LRUCache:
     """
     Our LRUCache class keeps track of the max number of nodes it
@@ -11,10 +7,7 @@ class LRUCache:
     to every node stored in the cache.
     """
     def __init__(self, limit=10):
-        self.size = 0
-        self.limit = limit
-        self.dll = DoublyLinkedList()
-        self.storage = dict()
+        pass
 
     """
     Retrieves the value associated with the given key. Also
@@ -24,18 +17,8 @@ class LRUCache:
     key-value pair doesn't exist in the cache.
     """
     def get(self, key):
-        if key in self.storage:
-            node = self.storage[key]
-            # move pair to the front
-            self.dll.move_to_front(node)
-            # get the pair
-            # key is 0, value is ->
-            return node.value[1]
-        else:
-            # if it doesn't exist in the cache
-            # return None 
-            return None
-        
+        pass
+
     """
     Adds the given key-value pair to the cache. The newly-
     added pair should be considered the most-recently used
@@ -47,24 +30,4 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
-        # check if key already exists
-       pair = (key,value)
-       if key in self.storage:
-           # move to front, because you "used" it 
-           self.dll.move_to_front(self.storage[key])
-           # target the value in key value pair 
-           self.dll.head.value = pair
-           self.storage[key] = self.dll.head
-       else:
-           # if not, add to the front 
-           self.dll.add_to_head(pair)
-           self.storage[key] = self.dll.head
-            
-       # now, check if the dictionary is surpassing the limit 
-       if len(self.storage) > self.limit:
-           # delete the key value pair from the tail to reduce the limit
-           del self.storage[self.dll.tail.value[0]] 
-           self.dll.remove_from_tail()
-           
-           
-       # add to both dictionary and to linked list
+        pass

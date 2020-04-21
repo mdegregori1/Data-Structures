@@ -2,9 +2,6 @@ import sys
 sys.path.append('../doubly_linked_list')
 from doubly_linked_list import DoublyLinkedList
 
-#notes: 
-# LIFO -> Think, stack of plates in a cabinet
-
 class Stack:
     def __init__(self):
         self.size = 0
@@ -12,20 +9,18 @@ class Stack:
         self.storage = DoublyLinkedList()
 
     def push(self, value):
-        #front is still head 
         self.storage.add_to_head(value)
         self.size += 1
 
     def pop(self):
-        # take out first item in the list
-        # this is because you have to erase in LIFO order, and the # most recently added item was added to the head 
-        if self.size > 0:
-            self.size -= 1
-            removed_list = self.storage.remove_from_head()
-            return removed_list
-        else:
+        # pop() is an inbuilt function in Python that removes and returns last value from the list or the given index value.
+        # last value in stack would be head
+        if self.size == 0:
             return 
+        else:
+            self.size -= 1
+            removed = self.storage.remove_from_head()
+            return removed
 
     def len(self):
-        dll = self.size
-        return dll
+        return self.size
