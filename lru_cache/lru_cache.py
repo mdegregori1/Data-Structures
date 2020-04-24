@@ -48,6 +48,7 @@ class LRUCache:
     """
     def set(self, key, value):
         if key in self.storage:
+            # define node by key 
             node = self.storage[key]
             # override here
             node.value = (key, value)
@@ -63,6 +64,7 @@ class LRUCache:
             self.size -= 1
         # key not in storage + have room
         self.ordering.add_to_tail((key, value))
+        # we need dict to refer to key added in node
         self.storage[key] = self.ordering.tail
         self.size += 1
             # add without worrying 
