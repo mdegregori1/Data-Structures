@@ -85,6 +85,9 @@ class BinarySearchTree:
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
+        # line
+        # enque -> add to head
+        # deque -> delete from tail
         queue = Queue()
         queue.enqueue(node)
         
@@ -99,8 +102,11 @@ class BinarySearchTree:
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
+        # Last in, first out
         stack = Stack()
+        #delete
         stack.push(node)
+
         while stack.len() > 0:
             delete_stack = stack.pop()
             print(delete_stack.value)
